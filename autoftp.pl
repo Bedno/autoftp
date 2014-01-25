@@ -47,7 +47,7 @@ foreach $batch_idx (0 .. $#batches) {
     foreach $task_idx (0 .. $#task) {
       if ($task[$task_idx][0] eq $batches[$batch_idx]) {
         $inbatch++;
-        FTP_Log('Processing ftp batch:"'.$batches[$batch_idx].'" ...', $ftp_debug);
+        FTP_Log('Processing ftp batch:"'.$batches[$batch_idx].'" task:'.$inbatch.' ...', $ftp_debug);
         if (lc(substr($task[$task_idx][1],0,1)) eq 'p') {
           &ftp_putfiles($task[$task_idx][2],$task[$task_idx][3],$task[$task_idx][4],$task[$task_idx][5],$task[$task_idx][6],$task[$task_idx][7],$task[$task_idx][8]);
         } else {
